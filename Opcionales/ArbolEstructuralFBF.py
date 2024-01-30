@@ -44,8 +44,10 @@ def check(fbf : deque):
             break
         return check(fbf1) and check(fbf2)
 
+    elif fbf_deque[0].isalpha() and len(fbf_deque) == 1:
+       return True
     else:
-      return fbf_deque[0].isalpha()
+       return False
 
 class Nodo:
     def __init__(self, valor=None):
@@ -144,7 +146,7 @@ def main():
     """ fbf = "(¬( ¬p -> q) ^ ( q v r ))"
         fbf2 = "( p v q )"
     """
-    print("Ingrese su fbf, puede utilizar cualquier letra del alfabeto\nLos conectivos son los siguientes:\n^, v, ->, <>")
+    print("Ingrese su fbf, puede utilizar cualquier letra del alfabeto\nLos conectivos son los siguientes:\n^, v, ->, <> y ¬")
 
     line = stdin.readline().strip()
     while line != "":
